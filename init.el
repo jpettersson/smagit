@@ -81,7 +81,28 @@
 
 (add-hook 'focus-in-hook 'maybe-magit-refresh)
 
+(use-package atom-one-dark-theme)
+
+(load-theme 'atom-one-dark t)
+
+(set-frame-font "Droid Sans Mono 13" nil t)
+
 (let ((personal-settings "~/.smagit.el"))
   (when (file-exists-p personal-settings)
     (message "Loading personal settings...")
     (load-file personal-settings)))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(safe-local-variable-values
+   (quote
+    ((cider-refresh-after-fn . "shared-api.user/start")
+     (cider-refresh-before-fn . "shared-api.user/stop")))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
